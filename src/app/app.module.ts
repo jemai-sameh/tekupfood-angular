@@ -24,6 +24,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './Pages/register/register.component';
+import { LoginComponent } from './Pages/login/login.component';
 
 
 
@@ -43,7 +45,9 @@ import { FormsModule } from '@angular/forms';
     ListPayementComponent,
     AddPayementComponent,
     AddPlatComponent,
-    ListPlatComponent
+    ListPlatComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

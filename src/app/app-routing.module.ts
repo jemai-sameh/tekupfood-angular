@@ -6,6 +6,7 @@ import { AddClientComponent } from './Pages/Client/add-client/add-client.compone
 import { ListClientComponent } from './Pages/Client/list-client/list-client.component';
 import { AddDeliveryManComponent } from './Pages/DeliveryMan/add-delivery-man/add-delivery-man.component';
 import { ListDeliveryManComponent } from './Pages/DeliveryMan/list-delivery-man/list-delivery-man.component';
+import { LoginComponent } from './Pages/login/login.component';
 import { AddManagerComponent } from './Pages/Manager/add-manager/add-manager.component';
 import { ListManagerComponent } from './Pages/Manager/list-manager/list-manager.component';
 import { AddOrderComponent } from './Pages/Order/add-order/add-order.component';
@@ -14,22 +15,26 @@ import { ListPayementComponent } from './Pages/Order/list-order/list-payement/li
 import { AddPayementComponent } from './Pages/Payment/add-payement/add-payement.component';
 import { AddPlatComponent } from './Pages/Plat/add-plat/add-plat.component';
 import { ListPlatComponent } from './Pages/Plat/list-plat/list-plat.component';
+import { RegisterComponent } from './Pages/register/register.component';
+import { AuthGuardService } from './Service/guard/auth-guard.service';
 
 const routes: Routes = [ 
-{path:"addAddress",component:AddAddresssComponent},
-{path:"addClient",component:AddClientComponent},
-{path:"addManager",component:AddManagerComponent},
-{path:"addOrder",component:AddOrderComponent},
-{path:"addPlat",component:AddPlatComponent},
-{path:"addPayement",component:AddPayementComponent},
-{path:"addDeliveryMan",component:AddDeliveryManComponent},
-{path:"listAddress",component:ListAddressComponent},
-{path:"listClient",component:ListClientComponent},
-{path:"listManager",component:ListManagerComponent},
-{path:"listOrder",component:ListOrderComponent},
-{path:"listPlat",component:ListPlatComponent},
-{path:"listPayement",component:ListPayementComponent},
-{path:"listDeliveryMan",component:ListDeliveryManComponent}
+  {path:"addAddress",component:AddAddresssComponent,canActivate : [AuthGuardService]},
+  {path:"addClient",component:AddClientComponent,canActivate : [AuthGuardService]},
+  {path:"addManager",component:AddManagerComponent,canActivate : [AuthGuardService]},
+  {path:"addOrder",component:AddOrderComponent,canActivate : [AuthGuardService]},
+  {path:"addPlat",component:AddPlatComponent,canActivate : [AuthGuardService]},
+  {path:"addPayement",component:AddPayementComponent,canActivate : [AuthGuardService]},
+  {path:"addDeliveryMan",component:AddDeliveryManComponent,canActivate : [AuthGuardService]},
+  {path:"listAddress",component:ListAddressComponent,canActivate : [AuthGuardService]},
+  {path:"listClient",component:ListClientComponent,canActivate : [AuthGuardService]},
+  {path:"listManager",component:ListManagerComponent,canActivate : [AuthGuardService]},
+  {path:"listOrder",component:ListOrderComponent,canActivate : [AuthGuardService]},
+  {path:"listPlat",component:ListPlatComponent,canActivate : [AuthGuardService]},
+  {path:"listPayement",component:ListPayementComponent,canActivate : [AuthGuardService]},
+  {path:"listDeliveryMan",component:ListDeliveryManComponent,canActivate : [AuthGuardService]},
+  {path :"login",component:LoginComponent },
+  {path :"register",component:RegisterComponent },
 ];
 
 @NgModule({
