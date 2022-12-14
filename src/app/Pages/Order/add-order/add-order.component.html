@@ -1,0 +1,55 @@
+<div class="container" id="main-container">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="reference">reference</label>
+                <input type="text" class="form-control" id="reference" required [(ngModel)]="entity.reference"
+                    name="reference" />
+
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select  [(ngModel)] ="entity.paymentMethod" name="paymentMethod" id="paymentMethod" class="form-select" aria-label="Default select example">    
+                    <option selected>Open this select menu</option>
+                    <option value="EnLine">En Ligne</option>
+                    <option value="cash">En Cash</option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label for="address">Address*</label>
+                  <select  [(ngModel)] ="entity.address" name="address" id="address" class="form-select" aria-label="Default select example">
+                    <option *ngFor="let item of addresses" [value]="item.id">{{item.street+" "+item.town+"
+                        "+item.postalCode}}</option>
+                </select>
+            </div>
+            <div class="form-group row">
+                <label for="client">Client*</label>
+                  <select  [(ngModel)] ="entity.client" name="client" id="client" class="form-select" aria-label="Default select example">
+                        <option *ngFor="let item of clients" [value]="item.id">{{item.firstName+" "+item.lastName}}
+                        </option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label for="address">Manager*</label>
+                  <select  [(ngModel)] ="entity.manager" name="manager" id="manager" class="form-select" aria-label="Default select example">
+                    <option *ngFor="let item of managers" [value]="item.id">{{item.firstName+" "+item.lastName}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="plats">Plats</label>
+              
+           <p-multiSelect [options]="labelValue" [(ngModel)]="entity.platIds" defaultLabel="Select a City" optionLabel="label">
+            </p-multiSelect>
+        </div>
+
+            <button (click)="add()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+            <h4>Order was submitted successfully!</h4>
+            <button class="btn btn-success" (click)="navigate()">Add</button>
+        </div>
+    </div>
+</div>

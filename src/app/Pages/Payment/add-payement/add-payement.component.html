@@ -1,0 +1,46 @@
+<div class="container" id="main-container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+
+      <div class="form-group">
+        <label for="paymentDate">paymentDate</label>
+        <input
+          type="date"
+          class="form-control"
+          id="paymentDate"
+          required
+          [(ngModel)]="entity.paymentDate"
+          name="paymentDate"
+        />
+
+      </div>
+      <div class="form-group">
+          <label for="carteNumber">carte Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="carteNumber"
+            required
+            [(ngModel)]="entity.carteNumber"
+            name="carteNumber"
+          />
+ 
+        </div>
+        <div class="form-group">
+          <label for="carteType">carte Type</label>
+          <select id="carteType" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+        </div>
+
+      <button (click)="add()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Manager was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="navigate()">Add</button>
+    </div>
+  </div>
+</div>

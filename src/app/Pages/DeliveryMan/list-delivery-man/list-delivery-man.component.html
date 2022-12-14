@@ -1,0 +1,37 @@
+<div class="container" id="main-container">
+    <button (click)="add()" class="btn btn-info" style="margin-left: 10px">
+      Add
+    </button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">fullname</th>
+          <th scope="col">phoneNumber</th>
+          <th scope="col">latitude</th>
+          <th scope="col">longitude</th>
+          <th scope="col">availablity</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of list" class="col-md-6 col-xl-5">
+          <td>{{ entity.id }}</td>
+          <td>{{ entity.firstName + " " + entity.lastName }}</td>
+          <td>{{ entity.phoneNumber }}</td>
+          <td>{{ entity.latitude }}</td>
+          <td>{{ entity.longitude }}</td>
+          <td><!--{{ entity.availablity }}--></td>
+
+          <td>
+            <a type="button" class="btn btn-sm btn-danger" (click)="delete(entity.id)">
+              Delete</a>&nbsp;
+            <a type="button" class="btn btn-sm btn-warning" (click)="update(entity.id)">Update</a>
+            <button (click)="details(entity.id)" class="btn btn-info" style="margin-left: 10px">
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

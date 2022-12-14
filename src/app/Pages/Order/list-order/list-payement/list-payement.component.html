@@ -1,0 +1,33 @@
+<div class="container" id="main-container">
+    <button (click)="add()" class="btn btn-info" style="margin-left: 10px">
+      Add
+    </button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">paymentDate</th>
+          <th scope="col">carteNumber</th>
+          <th scope="col">platType</th>
+
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of list" class="col-md-6 col-xl-5">
+          <td>{{ entity.id }}</td>
+          <td>{{ entity.paymentDate}}</td>
+          <td>{{ entity.carteNumber }}</td>
+          <td>{{ entity.carteType }}</td>
+          <td>
+            <a type="button" class="btn btn-sm btn-danger" (click)="delete(entity.id)">
+              Delete</a>&nbsp;
+            <a type="button" class="btn btn-sm btn-warning" (click)="update(entity.id)">Update</a>
+            <button (click)="details(entity.id)" class="btn btn-info" style="margin-left: 10px">
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

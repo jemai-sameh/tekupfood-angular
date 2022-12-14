@@ -1,0 +1,66 @@
+<div class="container" id="main-container">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="platName"> Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="platName"
+            required
+            [(ngModel)]="entity.platName"
+            name="platName"
+          />
+ 
+        </div>
+        <div class="form-group">
+          <label for="platPrix"> Prix</label>
+          <input
+            class="form-control"
+            id="platPrix"
+            required
+            [(ngModel)]="entity.platPrix"
+            name="platPrix"
+            type="string"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="platType">platType</label>
+            <select  [(ngModel)] ="entity.platType" name="platType" id="platType" class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="description">Description </label>
+            <input
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="entity.description"
+              name="description"
+              type="date"
+            />
+          </div>
+         
+          <div class="form-group row">
+            <label for="address">Manager*</label>
+           <!-- <select id="manager" formControlName="manager" class="custom-select form-control">-->
+              <select  [(ngModel)] ="entity.manager" name="manager" id="manager" class="form-select" aria-label="Default select example">
+                <option *ngFor="let item of managers" [value]="item.id">{{item.firstName+" "+item.lastName}}</option>
+            </select>
+        </div>
+          
+ 
+        <button (click)="add()" class="btn btn-success">Submit</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Plat was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="navigate()">Add</button>
+      </div>
+    </div>
+  </div>
+ 

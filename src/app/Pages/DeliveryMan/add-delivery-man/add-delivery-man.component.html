@@ -1,0 +1,85 @@
+<div class="container" id="main-container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          required
+          [(ngModel)]="entity.firstName"
+          name="firstName"
+        />
+
+      </div>
+      <div class="form-group">
+          <label for="lastName">lastName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            required
+            [(ngModel)]="entity.lastName"
+            name="lastName"
+          />
+ 
+        </div>
+      <div class="form-group">
+        <label for="telephone">phoneNumber</label>
+        <input
+          class="form-control"
+          id="phoneNumber"
+          required
+          [(ngModel)]="entity.phoneNumber"
+          name="phoneNumber"
+          type="string"
+        />
+      </div>
+      <div class="form-group">
+          <label for="passwd">passwd</label>
+          <input
+            type="password"
+            class="form-control"
+            id="passwd"
+            required
+            [(ngModel)]="entity.passwd"
+            name="passwd"
+          />
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude</label>
+          <input
+            type="text"
+            class="form-control"
+            id="latitude"
+            required
+            [(ngModel)]="entity.latitude"
+            name="latitude"
+          />
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude</label>
+          <input
+            type="longitude"
+            class="form-control"
+            id="longitude"
+            required
+            [(ngModel)]="entity.longitude"
+            name="longitude"
+          />
+        </div>
+        <div class="custom-control custom-switch">
+          <label for="availablity"> Availablity </label>
+          <input id="availablity" type="checkbox" [(ngModel)]="entity.availablity" data-toggle="switchbutton" checked data-size="lg">
+          <!--<input type="checkbox"(click)="enable(item)"  class="custom-control-input" id="enable{{item.irrigationAutomatique}}" [(ngModel)]="item.irrigationAutomatique" >
+              <label class="custom-control-label" for="enable{{item.irrigationAutomatique}}"></label>
+          --></div>
+      <button (click)="add()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Delivery Man was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="navigate()">Add</button>
+    </div>
+  </div>
+</div>
