@@ -1,6 +1,8 @@
 export class RegisterRequest {
-    email !: string;
-    password !:string;
-    firstname !:string;
-    lastname !:string;
+    fullName!: string;
+	phoneNumber!: string;
+	password!: string;
+	email!: string;
+  //  specialite !:string;   
+
 }

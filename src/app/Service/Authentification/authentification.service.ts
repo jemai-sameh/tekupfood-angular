@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 export class AuthentificationService {
   constructor(private router : Router,private httpClient: HttpClient) { }
   private baseUrl=environment.baseurl+"/auth"
+
   isUserAuthenticated():boolean{
     if (localStorage.getItem ("accesstoken")){
       return true;
@@ -21,7 +22,6 @@ export class AuthentificationService {
 return false;
   }
   login(authenticationRequest : AuthenticationRequest):Observable<AuthenticationResponse>{
-
     const url=this.baseUrl+"/authenticate"
     return this.httpClient.post(url,authenticationRequest)
   }
@@ -33,5 +33,4 @@ return false;
     const url=this.baseUrl+"/register"
     return this.httpClient.post(url,registerRequest)
   }
-
 }

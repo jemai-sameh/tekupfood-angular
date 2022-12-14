@@ -2,11 +2,11 @@ import { Commande } from "./commande";
 
 export class Client {
 	id!:number;
-    firstName!: string;
-	lastName!: string;
+    fullName!: string;
 	phoneNumber!: string;
-	passwd!: string;
-	mail!: string;
+	password!: string;
+	email!: string;
 	orders!:Commande[];
+
 
 }

@@ -3,10 +3,10 @@ import { Plat } from "./plat";
 
 export class Manager {
 	id!:number;
-    firstName!: string;
-	lastName!: string;
+    fullName!: string;
 	phoneNumber!: string;
-	passwd!: string;
+	password!: string;
+	email!: string;
 	orders!:Commande[];
 	plats!:Plat[];
 

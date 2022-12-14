@@ -2,10 +2,10 @@ import { Delivery } from "./delivery";
 
 export class DeliveryMan {
 	id!:number;
-    firstName!: string;
-    lastName!: string;
+    fullName!: string;
 	phoneNumber!: string;
-	passwd!: string;
+	password!: string;
+	email!: string;
 	latitude!: string;
 	longitude!: string;
 	availablity!: Boolean;

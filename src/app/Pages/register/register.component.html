@@ -9,12 +9,12 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"><img src="/src/assets/img/foodPNG.PNG" alt="" srcset=""></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
                                   
-                                    <h1 class="h4 text-gray-900 mb-4">Tek-Up Food</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Gestion de Stage</h1>
                                 </div>
                                 <div class="alert alert-danger" *ngIf="errorMsg">
                                     {{errorMsg}}
@@ -22,13 +22,8 @@
                                 <form class="user">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user"
-                                            id="exampleInputEmail" aria-describedby="emailHelp" name="firstname"
-                                            placeholder="Enter firstname Address..." [(ngModel)]="registerRequest.firstname">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user"
-                                            id="exampleInputEmail" aria-describedby="emailHelp" name="lastname"
-                                            placeholder="Enter lastname Address..." [(ngModel)]="registerRequest.lastname">
+                                            id="exampleInputEmail" aria-describedby="emailHelp" name="fullname"
+                                            placeholder="Enter Fullname ..." [(ngModel)]="registerRequest.fullName">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" name="email"
@@ -38,12 +33,20 @@
                                         <input type="password" class="form-control form-control-user" name="password"
                                             id="exampleInputPassword" placeholder="Password" [(ngModel)]="registerRequest.password">
                                     </div>
-                                    
-                                    <!--<div class="form-group">
+
+                                    <div class="form-group">
+                                        <input type="number" class="form-control form-control-user" name="telephone"
+                                            id="exampleInputTelephone" placeholder="telephone" [(ngModel)]="registerRequest.phoneNumber">
+                                    </div>
+                                   <!-- <div class="form-group">
                                         <input type="date" class="form-control form-control-user" name="datenaissance"
-                                            id="exampleInputDatenaissance" placeholder="datenaissance" [(ngModel)]="registerRequest.birthday">
-                                    </div>-->
-                                    
+                                            id="exampleInputDatenaissance" placeholder="datenaissance" [(ngModel)]="registerRequest.birthDay">
+                                    </div>
+                                   <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="specialite"
+                                            id="exampleInputSpecialite" placeholder="specialite" [(ngModel)]="registerRequest.specialite">
+                                    </div>
+                                -->
 
 
 
@@ -75,5 +78,4 @@
     </div>
 
 </div>
-
 

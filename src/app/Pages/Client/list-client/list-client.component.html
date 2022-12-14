@@ -8,16 +8,16 @@
         <th scope="col">id</th>
         <th scope="col">fullname</th>
         <th scope="col">phoneNumber</th>
-        <th scope="col">mail</th>
+        <th scope="col">Email</th>
         <th>action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let entity of list" class="col-md-6 col-xl-5">
         <td>{{ entity.id }}</td>
-        <td>{{ entity.firstName + " " + entity.lastName }}</td>
+        <td>{{ entity.fullName }}</td>
         <td>{{ entity.phoneNumber }}</td>
-        <td>{{ entity.mail }}</td>
+        <td>{{ entity.email }}</td>
         <td>
           <a type="button" class="btn btn-sm btn-danger" (click)="delete(entity.id)">
             Delete</a>&nbsp;

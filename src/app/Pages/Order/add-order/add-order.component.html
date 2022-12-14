@@ -26,7 +26,7 @@
             <div class="form-group row">
                 <label for="client">Client*</label>
                   <select  [(ngModel)] ="entity.client" name="client" id="client" class="form-select" aria-label="Default select example">
-                        <option *ngFor="let item of clients" [value]="item.id">{{item.firstName+" "+item.lastName}}
+                        <option *ngFor="let item of clients" [value]="item.id">{{item.fullName}}
                         </option>
                 </select>
             </div>
@@ -34,7 +34,7 @@
             <div class="form-group row">
                 <label for="address">Manager*</label>
                   <select  [(ngModel)] ="entity.manager" name="manager" id="manager" class="form-select" aria-label="Default select example">
-                    <option *ngFor="let item of managers" [value]="item.id">{{item.firstName+" "+item.lastName}}</option>
+                    <option *ngFor="let item of managers" [value]="item.id">{{item.fullName}}</option>
                 </select>
             </div>
 

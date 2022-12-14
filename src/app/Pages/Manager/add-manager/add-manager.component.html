@@ -2,29 +2,18 @@
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
-        <label for="firstName">firstName</label>
+        <label for="fullName">fullName</label>
         <input
           type="text"
           class="form-control"
-          id="firstName"
+          id="fullName"
           required
-          [(ngModel)]="entity.firstName"
-          name="firstName"
+          [(ngModel)]="entity.fullName"
+          name="fullName"
         />
 
       </div>
-      <div class="form-group">
-          <label for="lastName">lastName</label>
-          <input
-            type="text"
-            class="form-control"
-            id="lastName"
-            required
-            [(ngModel)]="entity.lastName"
-            name="lastName"
-          />
- 
-        </div>
+
       <div class="form-group">
         <label for="telephone">phoneNumber</label>
         <input
@@ -37,13 +26,24 @@
         />
       </div>
       <div class="form-group">
+        <label for="email">E-mail </label>
+        <input
+            type="email"
+          class="form-control"
+          id="email"
+          required
+          [(ngModel)]="entity.email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
           <label for="passwd">passwd</label>
           <input
             type="password"
             class="form-control"
             id="passwd"
             required
-            [(ngModel)]="entity.passwd"
+            [(ngModel)]="entity.password"
             name="passwd"
           />
         </div>

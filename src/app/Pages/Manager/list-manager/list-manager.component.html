@@ -14,7 +14,7 @@
       <tbody>
         <tr *ngFor="let entity of list" class="col-md-6 col-xl-5">
           <td>{{ entity.id }}</td>
-          <td>{{ entity.firstName + " " + entity.lastName }}</td>
+          <td>{{ entity.fullName }}</td>
           <td>{{ entity.phoneNumber }}</td>
           <td>
             <a type="button" class="btn btn-sm btn-danger" (click)="delete(entity.id)">

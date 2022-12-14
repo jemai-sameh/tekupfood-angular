@@ -12,16 +12,16 @@ export class AuthIntercepterServiceService {
 
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let authenticationResponse: AuthenticationResponse = {};
-    if (localStorage.getItem("accesstoken")) {
-      authenticationResponse = JSON.parse(localStorage.getItem("accesstoken") as string)
-      req = req.clone({
-        headers: new HttpHeaders({
-          Authorization: "Bearer " + authenticationResponse.token
-        })
-      })
-    }
-    return next.handle(req)
+  let authenticationResponse : AuthenticationResponse ={};
+  if(localStorage.getItem("accesstoken")){
+    authenticationResponse= JSON.parse(localStorage.getItem("accesstoken") as string )
+ req=req.clone({
+  headers:new  HttpHeaders({
+    Authorization:"Bearer "+authenticationResponse.token
+  })
+})
+  }
+return next.handle(req)
   }
 
 }

@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.authenticationRequest).subscribe(
         ress =>{
           this.authService.setUserToken(ress)
-          
-          this.router.navigate(["/home"])
+          alert("bravo")
+          //this.router.navigate(["/home"])
   
         },error =>{
           this.errorMsg= "login ou mot de pass incorect"

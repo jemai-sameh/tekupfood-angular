@@ -50,7 +50,7 @@
             <label for="address">Manager*</label>
            <!-- <select id="manager" formControlName="manager" class="custom-select form-control">-->
               <select  [(ngModel)] ="entity.manager" name="manager" id="manager" class="form-select" aria-label="Default select example">
-                <option *ngFor="let item of managers" [value]="item.id">{{item.firstName+" "+item.lastName}}</option>
+                <option *ngFor="let item of managers" [value]="item.id">{{item.fullName}}</option>
             </select>
         </div>
           
