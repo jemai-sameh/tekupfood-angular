@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Plat</div>
+  <div class="page__content shadow position-relative">
+
+    <div class="container" id="main-container">
+      <button (click)="add()" class="btn btn-info" style="margin-left: 10px;margin-bottom:10px; width: 150px;">
+        Add
+      </button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">platName</th>
+            <th scope="col">platPrix</th>
+            <th scope="col">platType</th>
+            <th scope="col">description</th>
+            <th scope="col">image</th>
+
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entity of list" class="col-md-6 col-xl-5">
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.platName}}</td>
+            <td>{{ entity.platPrix }}</td>
+            <td>{{ entity.platType }}</td>
+            <td>{{ entity.description }}</td>
+            <td>
+              <img [src]="entity.image" width="50px" alt="" srcset="">
+
+            </td>
+              <td id="action" style="display: flex;">
+              <a  (click)="delete(entity.id)"><i class="bi bi-trash" style="color: red;"></i></a>
+              &nbsp;<a (click)="update(entity.id)"><i class="bi bi-pencil-square" style="color: #1e293b;"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>

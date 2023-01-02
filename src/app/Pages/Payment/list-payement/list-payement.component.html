@@ -1,0 +1,45 @@
+
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Payment</div>
+  <div class="page__content shadow position-relative">
+    
+      <div class="container" id="main-container">
+        <button (click)="add()" class="btn btn-info" style="margin-left: 10px;margin-bottom:10px; width: 150px;">
+          Add
+    </button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">paymentDate</th>
+          <th scope="col">carteNumber</th>
+          <th scope="col">platType</th>
+
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of list" class="col-md-6 col-xl-5">
+          <td>{{ entity.id }}</td>
+          <td>{{ entity.paymentDate}}</td>
+          <td>{{ entity.carteNumber }}</td>
+          <td>{{ entity.carteType }}</td>
+          <td id="action" style="display: flex;">
+            <a  (click)="delete(entity.id)"><i class="bi bi-trash" style="color: red;"></i></a>
+            &nbsp;<a (click)="update(entity.id)"><i class="bi bi-pencil-square" style="color: #1e293b;"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+       
+      
+                      
+
+
+
+
+</div>
+</div>
+

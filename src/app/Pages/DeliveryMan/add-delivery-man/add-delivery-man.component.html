@@ -1,0 +1,96 @@
+
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">DeliveryMan</div>
+  <div class="page__content shadow position-relative">
+    
+      <div class="container" id="main-container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+
+      
+      <div class="container" id="main-container">
+        <div class="submit-form">
+          <div *ngIf="!submitted">
+
+            <table class="table table-borderless">
+              <tr >
+                <td class="form-group">
+                  <label for="fullName">fullName</label>
+                  <input type="text" class="form-control" id="fullName" required [(ngModel)]="entity.fullName"
+                    name="fullName" />    
+                </td>
+                <td class="form-group">
+                  <label for="telephone">phoneNumber</label>
+                  <input class="form-control" id="phoneNumber" required [(ngModel)]="entity.phoneNumber" name="phoneNumber"
+                    type="string" />
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                    <label for="email">E-mail </label>
+                    <input type="email" class="form-control" id="email" required [(ngModel)]="entity.email" name="email" />
+                </td>
+                <td class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" class="form-control" id="password" required [(ngModel)]="entity.password"
+                      name="password" />
+                </td>
+              </tr>
+              <tr>
+                <td class="form-group">
+                  <label for="latitude">Latitude</label>
+          <input
+            type="text"
+            class="form-control"
+            id="latitude"
+            required
+            [(ngModel)]="entity.latitude"
+            name="latitude"
+          />
+                </td>
+                <td class="form-group">
+                  <label for="longitude">Longitude</label>
+                  <input
+                    type="longitude"
+                    class="form-control"
+                    id="longitude"
+                    required
+                    [(ngModel)]="entity.longitude"
+                    name="longitude"
+                  />        
+                </td>
+              </tr>
+              <tr>
+                <td class="form-group custom-control custom-switch">
+                    <label for="availablity"> Availablity </label>
+                    <input id="availablity" type="checkbox" [(ngModel)]="entity.availablity" data-toggle="switchbutton" checked data-size="lg">
+                    <!--<input type="checkbox"(click)="enable(item)"  class="custom-control-input" id="enable{{item.irrigationAutomatique}}" [(ngModel)]="item.irrigationAutomatique" >
+                        <label class="custom-control-label" for="enable{{item.irrigationAutomatique}}"></label>
+                    -->
+                </td>
+                <td class="form-group">
+                  
+                </td>
+              </tr>
+            </table>
+            
+        
+      <button (click)="add()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Delivery Man was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="navigate()">Add</button>
+    </div>
+  </div>
+</div>
+
+       
+      
+                      
+
+
+
+
+
+</div>
+</div>

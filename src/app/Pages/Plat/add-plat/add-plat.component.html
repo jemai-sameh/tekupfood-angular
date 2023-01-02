@@ -1,0 +1,111 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Plat</div>
+  <div class="page__content shadow position-relative">
+
+    <div class="container" id="main-container">
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+
+          <table class="table table-borderless">
+            <tr>
+              <td class="form-group">
+                <label for="platName"> Name</label>
+                <input type="text" class="form-control" id="platName" required [(ngModel)]="entity.platName"
+                  name="platName" />
+              </td>
+              <td class="form-group">
+                <label for="platPrix"> Prix</label>
+                <input class="form-control" id="platPrix" required [(ngModel)]="entity.platPrix" name="platPrix"
+                  type="string" />
+              </td>
+            </tr>
+            <tr>
+              <td class="form-group">
+                <label for="platType">Catégorie Plat</label>
+                <select [(ngModel)]="entity.platType" name="platType" id="platType" class="form-select"
+                  aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="Main dishes">Main dishes</option>
+                  <option value="Desserts">Desserts</option>
+                  <option value="Soups">Soups</option>
+                  <option value="Sauces">Sauces</option>
+                  <option value="Cheese dishes">Cheese dishes</option>
+                  <option value="Meat dishes">Meat dishes</option>
+                  <option value="Pies and savory tarts">Pies and savory tarts </option>
+                  <option value="Brunchs & Lunches">Brunchs & Lunches</option>
+                  <option value="Pizza & Compagne">Pizza & Compagne</option>
+                  <option value="Boissons">Boissons</option>
+                </select>
+              </td>
+              <td class="form-group">
+                <label for="description">Description </label>
+                <input class="form-control" id="description" required [(ngModel)]="entity.description"
+                  name="description" type="text" />
+              </td>
+            </tr>
+            <tr>
+              <td class="form-group">
+                <label for="address">Manager*</label>
+                <!-- <select id="manager" formControlName="manager" class="custom-select form-control">-->
+                <select [(ngModel)]="entity.manager" name="manager" id="manager" class="form-select"
+                  aria-label="Default select example">
+                  <option *ngFor="let item of managers" [value]="item.id">{{item.fullName}}</option>
+                </select>
+              </td>
+              <td class="form-group">
+                <label for="image">Image*</label>
+
+                <div class="row align-items-center  justify-content-center">
+                  <div class="col-xl-10 col-lg-10 col-md-12 col-sm-4 col-xs-10 col-10 text-center">
+                    <!--<img src="{{imgPlat}}" class="form-control img mx-auto" style="width: 120px;height: 120px;">
+                    -->
+                    <div class=" align-items-center " (change)="changeImagePlat($event)">
+                        <input   id="image" type="file" class="form-control" (change)="changeImagePlat($event)">
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+
+          </table>
+
+
+
+          <button (click)="add()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+          <h4>Plat was submitted successfully!</h4>
+          <button class="btn btn-success" (click)="navigate()">Add</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<!--
+
+
+   <div class="row align-items-center  justify-content-center">
+                  <div class="col-xl-10 col-lg-10 col-md-12 col-sm-4 col-xs-10 col-10 text-center">
+                    <img src="{{logo}}" class="form-control img mx-auto" style="width: 120px;height: 120px;"
+                      onError="this.src='../../../../assets/images/defaultAvatar.jpg';">
+
+                    <div class=" align-items-center " (change)="onFileChangeLogo($event)">
+                      <label class="  btn btn-default">
+                        <img src="/assets/images/upload.svg" style="display: none" height="35">
+                        <input class="upload-file-selector" style="display: none" type="file"
+                          (change)="selectFileLogo($event)" accept="image/jpeg , image/png , image/jpg" #logoCompany
+                          (click)="logoCompany.value=null;  ">
+                        <a class=" btn btn-demo photo" nbTooltip="Télécharger photo" nbTooltipPlacement="bottom"
+                          nbTooltipStatus="info" nbButton hero status="success"> <i class="fas fa-camera"></i>
+                        </a>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+-->

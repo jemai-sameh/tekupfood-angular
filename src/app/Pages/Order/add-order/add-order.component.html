@@ -1,0 +1,76 @@
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Order</div>
+    <div class="page__content shadow position-relative">
+      
+        <div class="container" id="main-container">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+
+            <table class="table table-borderless">
+                <tr >
+                  <td class="form-group">
+                    <label for="reference">reference</label>
+                <input type="text" class="form-control" id="reference" required [(ngModel)]="entity.reference"
+                    name="reference" />
+                  </td>
+                  <td class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select  [(ngModel)] ="entity.paymentMethod" name="paymentMethod" id="paymentMethod" class="form-select" aria-label="Default select example">    
+                        <option selected>Open this select menu</option>
+                        <option value="EnLine">En Ligne</option>
+                        <option value="cash">En Cash</option>
+                    </select>    
+                  </td>
+                </tr>
+                <tr >
+                  <td class="form-group">
+                    <label for="address">Address*</label>
+                    <select  [(ngModel)] ="entity.address" name="address" id="address" class="form-select" aria-label="Default select example">
+                      <option *ngFor="let item of addresses" [value]="item.id">{{item.street+" "+item.town+"
+                          "+item.postalCode}}</option>
+                  </select>    
+                  </td>
+                  <td class="form-group row">
+                    <label for="client">Client*</label>
+                    <select  [(ngModel)] ="entity.client" name="client" id="client" class="form-select" aria-label="Default select example">
+                          <option *ngFor="let item of clients" [value]="item.id">{{item.fullName}}
+                          </option>
+                  </select>     
+                  </td>
+                </tr>
+                <tr >
+                  <td class="form-group">
+                    <label for="address">Manager*</label>
+                    <select  [(ngModel)] ="entity.manager" name="manager" id="manager" class="form-select" aria-label="Default select example">
+                      <option *ngFor="let item of managers" [value]="item.id">{{item.fullName}}</option>
+                  </select>    
+                  </td>
+                    <td class="form-group row">
+                        <label for="plats">Plats</label>
+                        <p-multiSelect [options]="labelValue" [(ngModel)]="entity.platIds" defaultLabel="Select a plat">
+                         </p-multiSelect>
+                    </td>
+                </tr>
+                
+              </table>
+
+
+            <button (click)="add()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+            <h4>Order was submitted successfully!</h4>
+            <button class="btn btn-success" (click)="navigate()">Add</button>
+        </div>
+    </div>
+</div>
+
+       
+      
+                      
+
+
+
+
+</div>
+</div>

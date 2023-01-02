@@ -1,0 +1,57 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Payment</div>
+  <div class="page__content shadow position-relative">
+
+    <div class="container" id="main-container">
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+
+          <table class="table table-borderless">
+            <tr>
+              <td class="form-group">
+                <label for="paymentDate">paymentDate</label>
+                <input type="date" class="form-control" id="paymentDate" required [(ngModel)]="entity.paymentDate"
+                  name="paymentDate" />
+
+              </td>
+              <td class="form-group">
+                <label for="carteNumber">carte Number</label>
+                <input type="text" class="form-control" id="carteNumber" required [(ngModel)]="entity.carteNumber"
+                  name="carteNumber" />
+              </td>
+            </tr>
+            <tr>
+              <td class="form-group">
+                <label for="carteType">carte Type</label>
+                <select [(ngModel)]="entity.carteType" name="carteType" id="carteType" class="form-select"
+                  aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="Visa">Visa</option>
+                  <option value="MasterCarte">MasterCarte</option>
+                </select>
+              </td>
+              <td class="form-group">
+
+              </td>
+            </tr>
+
+          </table>
+
+
+          <button (click)="add()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+          <h4>Manager was submitted successfully!</h4>
+          <button class="btn btn-success" (click)="navigate()">Add</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div>
